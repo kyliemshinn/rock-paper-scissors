@@ -21,13 +21,25 @@ function userChoice() {
 }
 
 computerChoice();
+
 userChoice();
 //alert user what the computer picks
 function gameScore(userScore, computerScore) {
     if (userScore === "R") {
         if (computerScore === "S") {
-            alert("You win this round. Your score is: ") + userScore++;
+            alert("Rock beats scissors. You win this round. Your score is: ") + userScore++;
         }
+    } if (userScore === "S") {
+        if (computerScore === "P") {
+            alert("Scissors beats paper. You win this round. Your score is: ") + userScore++;
+        }
+    } if (userScore === "P") {
+        if (computerScore === "R")
+        alert("Paper beats rock. You win this round. Your score is: ") + userScore++;
+    }if (userScore === computerScore) {
+        alert("It's a tie!");
+    } else {
+        alert("")
     }
 
 }
