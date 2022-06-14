@@ -1,24 +1,43 @@
-//list of all the options 
-const computerChoices = [ "rock", "paper", "scissors"];
+// Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+let computerChoices = ["rock", "paper", "s"];
 
-//holds either wins, losses, or ties
+// set wins loss and ties to 0 initially
 let wins = 0;
 let losses = 0;
 let ties = 0;
 
+for (var i = 0; i < 5; i++) {
+  //get computer response at random
+  let computerGuess =
+    computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
-//loop through number of times to play
-for (let i = 0; i < 5; i++) {
-    //create the computer guess at random
-    const computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-    //create the user guess
-    const userGuess = prompt("Enter rock, paper, or scissors to start playing");
-    //send each guess to be lowercase
-    userGuess = userGuess.toLowerCase();
+  //get user response 
+  let userGuess = prompt("Enter rock, paper, or scissors to play!");
+  userGuess = userGuess.toLowerCase();
 
-    if(userGuess === "rock" || userGuess === "paper" || userGuess === "scissors") {
-        alert("the computer chose" + computerGuess);
-        
+  // Only run game logic if user chose a valid option
+  if (userGuess === "rock" || userGuess === "paper" || userGuess === "scissors") {
+    alert("The computer chose " + computerGuess);
+
+    // Win/lose conditions:
+    if (
+      (userGuess === "rock" && computerGuess === "scissors") ||
+      (userGuess === "scissors" && computerGuess === "paper") ||
+      (userGuess === "paper" && computerGuess === "rock")
+    ) {
+      wins++;
+      alert("You've won " + wins + " time(s)!");
+    } else if (userGuess === computerGuess) {
+      ties++;
+      alert("You've tied " + ties + " time(s).");
+    } else {
+      losses++;
+      alert("You've lost " + losses + " time(s).");
     }
+  }
 }
 
+// alert the total wins and losses
+alert(
+  "Total wins: " + wins + "\nTotal ties: " + ties + "\nTotal losses: " + losses
+);
