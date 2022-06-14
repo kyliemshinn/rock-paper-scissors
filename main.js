@@ -1,59 +1,16 @@
-var userScore = 0;
-var computerScore = 0;
-var ties = 0;
+//list of all the options 
+const computerChoices = [ "rock", "paper", "scissors"];
 
-//alert user to play rock, paper, scissors
-alert("Do you want to play rock, paper scissors?");
+//holds either wins, losses, or ties
+let wins = 0;
+let losses = 0;
+let ties = 0;
 
 
-//prompt user to input r, s, or p
-
-function computerChoice() {
-    var choices = ["R", "P", "S"];
-    var random = choices[Math.floor(Math.random() * 3)];
-    return random;
+//loop through number of times to play
+for (let i = 0; i < 5; i++) {
+    const userGuess = prompt("Enter rock, paper, or scissors to start playing");
+    //send each guess to be lowercase
+    userGuess = userGuess.toLowerCase();
 }
-
-function userChoice() {
-   var userInput = prompt("Type R, P, or S");
-   return userInput;
-
-}
-
-computerChoice();
-
-userChoice();
-//alert user what the computer picks
-function gameScore(userScore, computerScore) {
-    if (userScore === "R") {
-        if (computerScore === "S") {
-            alert("Rock beats scissors. You win this round. Your score is: ") + userScore++;
-        }
-    } if (userScore === "S") {
-        if (computerScore === "P") {
-            alert("Scissors beats paper. You win this round. Your score is: ") + userScore++;
-        }
-    } if (userScore === "P") {
-        if (computerScore === "R")
-        alert("Paper beats rock. You win this round. Your score is: ") + userScore++;
-    }if (userScore === computerScore) {
-        alert("It's a tie!");
-    } else {
-        alert("")
-    }
-
-}
-
-
-
-//confirm if you want to keep playing
-//confirm()
-
-//alert to show the wins, losses, and ties- conditional statements
-//alert()
-
-//confirm if you want to keep playing
-//confirm()
-
-
 
